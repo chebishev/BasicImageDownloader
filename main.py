@@ -8,6 +8,11 @@ load_dotenv()
 
 # Check your env file for BASE_URL and NUMBER_OF_FILES
 base_url = os.getenv("BASE_URL")
+"""
+Start loop from one and go to the number of files specified in the env file.
+The first file will not have a number at the end, but the rest will.
+Example case: photo.png, photo2.png, photo3.png, etc.
+"""
 start_num = 1
 end_num = int(os.getenv("NUMBER_OF_FILES", 2))  # Default to 2 if not set
 # Be sure that FIRST_FILE_NAME is set in your .env file
@@ -16,7 +21,7 @@ file_extension = os.getenv("FILE_EXTENSION")
 
 for i in range(start_num, end_num + 1):
     # first image has no number at the end
-    if i == 1:
+    if i == start_num:
         url = f"{base_url}"
         filename = first_file_name + file_extension
     else:
