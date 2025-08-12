@@ -1,0 +1,4 @@
+BASE_URL="the_url_that_contains_the_files"
+FIRST_FILE_NAME="samples"
+FILE_EXTENSION=".png"
+NUMBER_OF_FILES=5
